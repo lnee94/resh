@@ -1,0 +1,2 @@
+#adds mutal line commits start with +- end with __
+alias \+\-=': <<__'
