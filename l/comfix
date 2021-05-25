@@ -1,2 +1,25 @@
-#adds mutal line commits start with +- end with __
-alias \+\-=': <<__'
+#bash-lib-o
+###adds mutal line commits start with +- end with __
+
+
+
+###options-o 
+#
+#help
+#remove
+###option-c
+case $arg in
+
+  help)
+    echo "adds mutal line commits start with +- end with __"
+    ;;
+    
+  remove)
+    unalias +-
+    ;;
+
+  *)
+    alias \+\-=': <<__'
+    ;;
+esac
+###bash-lib-c
