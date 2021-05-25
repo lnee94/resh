@@ -1,7 +1,10 @@
 
 #bash-lib-o
 ###adds the goto command
-
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 
 ###options-o 
