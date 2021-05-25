@@ -1,0 +1,32 @@
+#bash-lib-o
+###installs libs
+
+
+
+###options-o 
+#
+#help
+#remove
+###option-c
+case $arg in
+
+  help)
+    echo "installs libs"
+    ;;
+    
+  remove)
+    unalias resher
+    ;;
+
+  *)
+    resher() {
+    eval "arg=\$2 ; ""$(curl -s $REPO/$1 )"
+    }
+    ;;
+esac
+
+
+###ed-o
+unset arg
+###ed-c
+###bash-lib-c
