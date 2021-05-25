@@ -22,4 +22,9 @@ case $arg in
     alias \+\-=': <<__'
     ;;
 esac
+
+
+###ed-o
+unset arg
+###ed-c
 ###bash-lib-c
