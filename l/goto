@@ -1,0 +1,33 @@
+
+#bash-lib-o
+###adds the goto command
+
+
+
+###options-o 
+#
+#help
+#remove
+###option-c
+case $arg in
+
+  help)
+    echo "usage goto linenum"
+    ;;
+    
+  remove)
+    unset goto
+    ;;
+
+  *)
+    goto() {
+    eval "$(cat $0 | tail -n $(( $(cat $0 | wc -l) - $1 )) )"
+    }
+    ;;
+esac
+
+
+###ed-o
+unset arg
+###ed-c
+###bash-lib-c
