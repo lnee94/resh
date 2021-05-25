@@ -1,5 +1,5 @@
 #bash-lib-o
-###make execacutable"
+###adds mutal line commits start with +- end with __
 
 
 
@@ -15,11 +15,13 @@ case $arg in
     ;;
     
   remove)
-    unalias mx
+    unalias resher
     ;;
 
   *)
-    alias mx='chmod +x '
+    resher() {
+    eval "arg=\$2 ; "'"$(curl -s $REPO/$1 )"'
+    }
     ;;
 esac
 
