@@ -14,7 +14,7 @@ case $arg in
     ;;
     
   remove)
-    unalias resher
+    unalias mx
     ;;
 
   *)
