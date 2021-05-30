@@ -1,0 +1,53 @@
+
+#basa arg handler
+
+
+###options-o 
+#
+#help
+#remove
+###option-c
+shopt -s expand_aliases
+case $arg in
+
+  help)
+    echo "handles arguments"
+    ;;
+    
+  remove)
+    unalias arghand
+    ;;
+
+  *)
+    alias arghand='il=1
+while [ $il != $(($# +1 )) ]
+do
+i=0
+argnum=$il
+out="case \$$argnum in"
+
+while [ $i != $flagcount  ]
+do
+
+out="$out""
+    ${flags[$i]})
+    in=\$$argnum
+    im=\$(echo \$in | tail -c \$(( \$(echo \$in | wc -c) - \$(echo ${flags[$i]} | wc -c) + 2)) )
+    ${flagdo[$i]}
+    ;;"
+
+
+i=$(($i + 1 )) ;done
+out="$out""
+esac"
+
+eval "$out"
+il=$(($il + 1 )) ;done'
+    ;;
+esac
+
+
+###ed-o
+unset arg
+###ed-c
+###bash-lib-c
