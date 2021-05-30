@@ -18,9 +18,7 @@ case $arg in
     ;;
 
   *)
-    resher() {
-    eval "arg=\$2 ; "'"$(curl -s $REPO/$1 )"'
-    }
+    alias mx="chmod +x"
     ;;
 esac
 
