@@ -1,3 +1,4 @@
+
 #bash-lib-o
 ###installs libs
 
@@ -5,6 +6,7 @@
 
 ###options-o 
 #
+#install
 #help
 #remove
 ###option-c
@@ -15,13 +17,18 @@ case $arg in
     ;;
     
   remove)
-    unalias resher
+    unset resher
+    ;;
+    install)
+    resher () {
+    eval "arg=$2 ; ""$(curl -s $REPO/$1)"
+    } 
     ;;
 
   *)
-    resher() {
-    eval "arg=\$2 ; ""$(curl -s $REPO/$1 )"
-    }
+    resher () {
+    eval "arg=$2 ; ""$(curl -s $REPO/$1)"
+    } 
     ;;
 esac
 
