@@ -7,6 +7,7 @@
 #help
 #remove
 ###option-c
+shopt -s expand_aliases
 case $arg in
 
   help)
