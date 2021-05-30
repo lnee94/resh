@@ -10,6 +10,7 @@
 #help
 #remove
 ###option-c
+repoget="curl -s"
 case $arg in
 
   help)
@@ -21,7 +22,37 @@ case $arg in
     ;;
     install)
     resher () {
-    eval "arg=$2 ; ""$(curl -s $REPO/$1)"
+    case $1 in
+
+    --help)
+    echo "a bash repo manager
+    
+    usage 
+    resher foobar args
+    resher -f /path/to/file foobar args
+    resher -h OR resher --help shows this
+    "
+    ;;
+    -h)
+    echo "a bash repo manager
+    
+    usage 
+    resher foobar args
+    resher -f /path/to/file foobar args
+    resher -h OR resher --help shows this
+    "
+    ;;
+    -f) 
+    echo "arg=$4 ; ""$($repoget $REPO/$3)" >> $2
+    
+    ;;
+
+  *)
+    eval "arg=$2 ; ""$($repoget $REPO/$1)"
+    
+    ;;
+    esac
+
     } 
     ;;
 
@@ -48,12 +79,12 @@ case $arg in
     "
     ;;
     -f) 
-    echo "arg=$4 ; ""$(curl -s $REPO/$3)" >> $2
+    echo "arg=$4 ; ""$($repoget $REPO/$3)" >> $2
     
     ;;
 
   *)
-    eval "arg=$2 ; ""$(curl -s $REPO/$1)"
+    eval "arg=$2 ; ""$($repoget $REPO/$1)"
     
     ;;
     esac
