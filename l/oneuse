@@ -1,0 +1,34 @@
+#bash-lib-o
+###oneuse
+
+
+###options-o 
+#
+#help
+#remove
+###option-c
+shopt -s expand_aliases
+case $arg in
+
+  help)
+    echo "oneuse"
+    ;;
+    
+  remove)
+    unset oneuse
+    ;;
+
+  *)
+    oneuse(){
+    alias $1="$2 ""
+alias $1=\"\" "
+    
+    }
+    ;;
+esac
+
+
+###ed-o
+unset arg
+###ed-c
+###bash-lib-c
