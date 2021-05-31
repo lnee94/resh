@@ -19,7 +19,8 @@ case $arg in
     ;;
 
   *)
-    alias arghand='il=1
+    alias arghand='flagcount=${#flags[@]}
+    il=1
 while [ $il != $(($# +1 )) ]
 do
 i=0
