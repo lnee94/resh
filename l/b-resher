@@ -1,0 +1,38 @@
+#bash-lib-o
+###runs mulple resher commands at ones
+
+
+###options-o 
+#
+#help
+#remove
+###option-c
+shopt -s expand_aliases
+case $arg in
+
+  help)
+    echo "runs mulple resher commands at ones"
+    ;;
+    
+  remove)
+    unset b-resher
+    ;;
+
+  *)
+b-resher(){
+i=1
+while [ $i != $(($# + 1)) ]
+do
+eval "resher \$$i"
+i=$(($i+1)) ; done
+
+}
+
+    ;;
+esac
+
+
+###ed-o
+unset arg
+###ed-c
+###bash-lib-c
