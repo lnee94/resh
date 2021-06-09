@@ -22,6 +22,7 @@ you download the text and add that to your shell script
 
 links
 http://bitly.ws/e6FS
-https://tinyurl.com/UuesK
+http://tinyurl.com/UuesK
 http://bitly.ws/e6Gd
+http://f.ls/g93LG
 
