@@ -4,7 +4,9 @@ goto /l for stuff
 to import a lib 
 
 note the REPO env var for this repo wought be set to https://raw.githubusercontent.com/lnee94/resh/main/l
-with export REPO="https://raw.githubusercontent.com/lnee94/resh/main/l"     command
+with export 
+
+```REPO="https://raw.githubusercontent.com/lnee94/resh/main/l"```     command
 
 
 ```eval "$(rl -s $REPO/insert-here)"```
