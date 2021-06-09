@@ -1,3 +1,5 @@
+
+![qr](https://user-images.githubusercontent.com/73306958/121403565-06365c00-c929-11eb-9fdd-3e3924ae5284.png)
 # resh
 A shell repo mainly for bash
 goto /l for stuff 
