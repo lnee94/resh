@@ -10,7 +10,7 @@ with export
 
 to install stuff (note this will only install to your cortent shell is wont to install to all shells add to your .bashrc)
 
-```eval "$(rl -s $REPO/insert-here)"```
+```eval "$(curl -s $REPO/insert-here)"```
 
 or import resher with
 ```eval "$(curl -s $REPO/resher)"```
