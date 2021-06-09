@@ -17,7 +17,7 @@ or import resher with
 ```resher insert-here```
 
 or this
-```eval "$(curl -L -s f.ls/g93LG)"```
+```eval "$(curl -L -s f.ls/g93LG)"``` which will add resher
 
 you download the text and add that to your shell script
 
