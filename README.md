@@ -16,6 +16,9 @@ or import resher with
 ```eval "$(curl -s $REPO/resher)"```
 ```resher insert-here```
 
+or this
+```eval "$(curl -L -s f.ls/g93LG)"```
+
 you download the text and add that to your shell script
 
 
