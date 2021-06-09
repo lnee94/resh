@@ -1,2 +1,2 @@
-REPO="https://raw.githubusercontent.com/lnee94/resh/main/l"
-eval "$(curl -s $REPO/resher)"
+eval 'REPO="https://raw.githubusercontent.com/lnee94/resh/main/l"
+eval "$(curl -s $REPO/resher)"'
