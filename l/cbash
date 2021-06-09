@@ -1,0 +1,83 @@
+###bash-lib-o
+###pre-o
+shopt -s expand_aliases
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###pre-c
+
+###dep-o
+###dep-c
+
+###code
+case $arg in
+    help)
+    echo "cbash is a lib for shorenting shell scripts
+with a lot and i mean a lot of aliases look at the source code for them
+and there is a list of comen link shortenrs 
+if you nead something else that is not overly spiftick
+send a pull request"
+    ;;
+    remove)
+    unalias r
+    unalias m
+    unalias c
+    unalias W
+    unalias v
+    unalias M
+    unalias X
+    unalias l
+    unalias S
+    unalias w
+    unalias F
+    unalias A
+    unalias C
+    unalias CL
+    unalias R
+    unalias I
+    unalias h
+    unalias H
+    unalias u
+    unalias K
+    unalias k
+    unalias T
+    unalias Td
+    unalias TD
+    unalias IN
+    
+    unset LS
+    ;;
+    *)
+    #the land of aliases
+    alias r="rm -r"
+    alias m=mkdir
+    alias c=cd
+    alias W=wget
+    alias v=mv
+    alias M=chmod
+    alias X=chmod\ +x
+    alias l=ln
+    alias S=ln\ -s
+    alias w=while
+    alias F=which
+    alias A=awk
+    alias C=curl\ -s
+    alias CL=curl\ -s\ -L
+    alias R=arch
+    alias I=if
+    alias h=do
+    alias H=done
+    alias u=until
+    alias K=then
+    alias k=fi
+    alias T=tr
+    alias Td=tr\ -d
+    alias TD=tr\ -d\ \"\\n\"
+    alias IN="i=\$((\$i+1))"
+    #comen link shortenrs
+    LS=( "http://tinyurl.com/" "http://bitly.ws/" "http://f.ls/" "http://bit.ly/" "https://youtu.be/" )
+    ;;
+    esac
+
+###ed-o
+unset arg
+###ed-c
+###bash-lib-c
