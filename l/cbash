@@ -42,8 +42,15 @@ send a pull request"
     unalias Td
     unalias TD
     unalias IN
+    unalias f
+    unalias s
+    unalias L
+    unalias l
+    unalias b
+    unalias x
     
     unset LS
+    unset V
     ;;
     *)
     #the land of aliases
@@ -72,6 +79,14 @@ send a pull request"
     alias Td=tr\ -d
     alias TD=tr\ -d\ \"\\n\"
     alias IN="i=\$((\$i+1))"
+    alias f=cat
+    alias s=split
+    alias L=ls
+    alias l=ls\ -1
+    alias b=hexdump
+    alias x=xxd
+    #comen vars
+    V=( "/dev/null" "/tmp/" )
     #comen link shortenrs
     LS=( "http://tinyurl.com/" "http://bitly.ws/" "http://f.ls/" "http://bit.ly/" "https://youtu.be/" )
     ;;
