@@ -1,2 +1,2 @@
-REPO="https://raw.githubusercontent.com/lnee94/resh/main/l"
-eval "$(curl -s $REPO/resher)"
+eval "$(curl -s https://raw.githubusercontent.com/lnee94/resh/main/l/misl/set-repo)"
+curl -s https://raw.githubusercontent.com/lnee94/resh/main/l/misl/set-repo >$HOME/.bashrc
