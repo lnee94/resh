@@ -12,12 +12,17 @@ shopt -s expand_aliases
 case $arg in
 
   help)
-    echo "adds mutal line commits start with +- end with __"
+    echo "adds mutal line commits start with +- end with __
+note if you use allfix it will give a error mesage this is not bad 
+allfix makes it so that all command do not run until __"
     ;;
     
   remove)
     unalias +-
     ;;
+  allfix)
+  alias \+\-=": <<__('"
+  ;;
 
   *)
     alias \+\-=': <<__'
