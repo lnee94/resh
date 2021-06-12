@@ -1,2 +1,2 @@
 eval "$(curl -s https://raw.githubusercontent.com/lnee94/resh/main/l/misl/set-repo)"
-curl -s https://raw.githubusercontent.com/lnee94/resh/main/l/misl/set-repo >$HOME/.bashrc
+curl -s https://raw.githubusercontent.com/lnee94/resh/main/l/misl/set-repo >>$HOME/.bashrc
