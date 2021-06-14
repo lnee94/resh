@@ -1,0 +1,24 @@
+
+#bash-lib-o
+id=("name" "version" "uuid use uuidgen to get this" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)";depin="depinst" ;} ;fi
+###init-c
+###deps-o
+$depin insert-package 
+###deps-c
+###code-o
+
+
+#put your code here and use the arg varible for arguemts
+
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
