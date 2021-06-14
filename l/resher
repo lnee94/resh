@@ -34,7 +34,13 @@ usefile="eval"
 endfile="" 
 endto=""
 
-help="echo no"
+help="echo a bash repo manager
+    
+    usage 
+    resher foobar args
+    resher -f /path/to/file foobar args
+    resher -h OR resher --help shows this
+    "
 fa=()
 
 flags=("-h" "--help" "-e" "-E" "-f=*" "--install-resher" "*" )
@@ -94,4 +100,3 @@ unset oneuue
 unset arg
 ###exit-c
 ###bash-lib-c 
-
