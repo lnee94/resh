@@ -1,13 +1,18 @@
 
-#basa arg handler
-
-
-###options-o 
-#
-#help
-#remove
-###option-c
+#bash-lib-o
+id=("arghand" "2.0" "e12c7dc7-0392-4efb-99a2-95cdfe586ffa" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
 shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)";depin="depinst" ;} ;fi
+###init-c
+###deps-o
+###deps-c
+###code-o
+
+
 case $arg in
 
   help)
@@ -48,7 +53,8 @@ il=$(($il + 1 )) ;done'
 esac
 
 
-###ed-o
+###code-c
+###exit-o
 unset arg
-###ed-c
-###bash-lib-c
+###exit-c
+###bash-lib-c 
