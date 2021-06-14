@@ -1,6 +1,17 @@
-
 #bash-lib-o
-###adds the goto command
+id=("goto" "2.0" "a23ba3ca-c7cf-4603-9b80-d3f270775651" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)";depin="depinst" ;} ;fi
+###init-c
+###deps-o
+$depin insert-package 
+###deps-c
+###code-o
+
 case $- in
     *i*) ;;
       *) return;;
@@ -29,8 +40,8 @@ case $arg in
     ;;
 esac
 
-
-###ed-o
+###code-c
+###exit-o
 unset arg
-###ed-c
-###bash-lib-c
+###exit-c
+###bash-lib-c 
