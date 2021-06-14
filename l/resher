@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("resher" "2.0.1" "02f31abd-29ab-447f-873a-c04d7963874e" )
+id=("resher" "2.0.2" "02f31abd-29ab-447f-873a-c04d7963874e" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -52,13 +52,13 @@ usefile="eval"
 endfile="" 
 endto=""
 
-help="echo a bash repo manager
+help="echo \"a bash repo manager
     
     usage 
     resher foobar args
     resher -f /path/to/file foobar args
     resher -h OR resher --help shows this
-    "
+    \""
 fa=()
 
 flags=("-h" "--help" "-e" "-E" "-f=*" "--install-resher" "*" )
