@@ -1,107 +1,97 @@
-
 #bash-lib-o
-###installs libs
-
-
-
-###options-o 
-#
-#install
-#help
-#remove
-###option-c
+id=("resher" "2.0" "02f31abd-29ab-447f-873a-c04d7963874e" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
 shopt -s expand_aliases
-repoget="curl -s"
-case $arg in
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)";depin="depinst" ;} ;fi
+###init-c
+###deps-o
+###deps-c
+###code-o
+resher(){
+oneuue(){
+    alias $1="$2 ""
+alias $1=\"\" "
+    
+    }
 
-  help)
-    echo "a bash repo manager
-    
-    usage 
-    resher foobar args
-    resher -f /path/to/file foobar args
-    resher -h OR resher --help shows this
-    "
-    ;;
-    
-  remove)
-    unset resher
-    ;;
-    install)
-    resher () {
-    case $1 in
-
-    --help)
-    echo "a bash repo manager
-    
-    usage 
-    resher foobar args
-    resher -f /path/to/file foobar args
-    resher -h OR resher --help shows this
-    "
-    ;;
-    -h)
-    echo "a bash repo manager
-    
-    usage 
-    resher foobar args
-    resher -f /path/to/file foobar args
-    resher -h OR resher --help shows this
-    "
-    ;;
-    -f) 
-    echo "arg=$4 ; ""$($repoget $REPO/$3)" >> $2
-    
-    ;;
-
-  *)
-    eval "arg=$2 ; ""$($repoget $REPO/$1)"
-    
-    ;;
-    esac
-
-    } 
-    ;;
-
-  *)
-    resher () {
-    case $1 in
-
-    --help)
-    echo "a bash repo manager
-    
-    usage 
-    resher foobar args
-    resher -f /path/to/file foobar args
-    resher -h OR resher --help shows this
-    "
-    ;;
-    -h)
-    echo "a bash repo manager
-    
-    usage 
-    resher foobar args
-    resher -f /path/to/file foobar args
-    resher -h OR resher --help shows this
-    "
-    ;;
-    -f) 
-    echo "arg=$4 ; ""$($repoget $REPO/$3)" >> $2
-    
-    ;;
-
-  *)
-    eval "arg=$2 ; ""$($repoget $REPO/$1)"
-    
-    ;;
-    esac
-
-    } 
-    ;;
-esac
+ 
 
 
-###ed-o
+oneuue dashe "usefile=echo"
+oneuue filee "usefile=echo
+endfile=\>\> 
+endto=\$im"
+oneuue reshinstall "usefile=echo
+endfile=\>\> 
+endto=$HOME/.resher
+echo \"source $HOME/.resher\" >> $HOME/.bashrc"
+ 
+getfile="curl -s "
+usefile="eval"
+endfile="" 
+endto=""
+
+help="echo no"
+fa=()
+
+flags=("-h" "--help" "-e" "-E" "-f=*" "--install-resher" "*" )
+flagdo=("\$help ; return" "\$help ; return" "dashe" "getfile=echo\ ; usefile=echo" " filee" "fa+=(resher) ;  reshinstall" "fa+=(\$in)" )
+
+
+###arghand
+flagcount=${#flags[@]}
+    il=1
+while [ $il != $(($# +1 )) ]
+do
+i=0
+argnum=$il
+out="case \$$argnum in"
+
+while [ $i != $flagcount  ]
+do 
+
+out="$out""
+    ${flags[$i]})
+    in=\$$argnum
+    im=\$(echo \$in | tail -c \$(( \$(echo \$in | wc -c) - \$(echo ${flags[$i]} | wc -c) + 2)) )
+    ${flagdo[$i]}
+    ;;"
+
+
+i=$(($i + 1 )) ;done
+out="$out""
+esac"
+
+eval "$out"
+il=$(($il + 1 )) ;done
+###arghand
+
+
+# echo ${fa[*]} 
+
+
+i=1
+until [ "$(echo "${fa[*]}" | awk -F, "{print \$$i}")" = "" ] 
+do
+arg1="$(echo "${fa[*]}" | awk -F, "{print \$$i}" | awk '{print $1}')"
+arg2="$(echo "${fa[*]}" | awk -F, "{print \$$i}" | awk '{print $2}')"
+echo '$usefile "arg=$arg2 ; ""$($getfile  $REPO/$arg1)" '"$endfile""$endto"
+
+i=$(($i+1)) ;done
+
+
+
+unalias dashe
+unalias filee
+unalias reshinstall
+unset oneuue
+}
+###code-c
+###exit-o
 unset arg
-###ed-c
-###bash-lib-c
+###exit-c
+###bash-lib-c 
+
