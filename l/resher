@@ -10,6 +10,24 @@ if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $R
 ###deps-o
 ###deps-c
 ###code-o
+case $arg in
+
+  help)
+    echo "a bash repo manager
+    
+    usage 
+    resher foobar args
+    resher -f /path/to/file foobar args
+    resher -h OR resher --help shows this
+    "
+    ;;
+    
+  remove)
+    unset resher
+    ;;
+   *) 
+
+
 resher(){
 oneuue(){
     alias $1="$2 ""
@@ -95,6 +113,8 @@ unalias filee
 unalias reshinstall
 unset oneuue
 }
+;;
+esac
 ###code-c
 ###exit-o
 unset arg
