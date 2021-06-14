@@ -1,13 +1,18 @@
-###bash-lib-o
-###pre-o
-shopt -s expand_aliases
+#bash-lib-o
+id=("cbash" "2.0" "5507b5af-3439-457d-8123-d3a8bd489529" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
-###pre-c
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)";depin="depinst" ;} ;fi
+###init-c
+###deps-o
+$depin insert-package 
+###deps-c
+###code-o
 
-###dep-o
-###dep-c
 
-###code
 case $arg in
     help)
     echo "cbash is a lib for shorenting shell scripts
@@ -92,7 +97,8 @@ send a pull request"
     ;;
     esac
 
-###ed-o
+###code-c
+###exit-o
 unset arg
-###ed-c
-###bash-lib-c
+###exit-c
+###bash-lib-c 
