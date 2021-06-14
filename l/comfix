@@ -1,14 +1,18 @@
+
 #bash-lib-o
-###adds mutal line commits start with +- end with __
-
-
-
-###options-o 
-#
-#help
-#remove
-###option-c
+id=("comfix" "2.0" "01e13ab1-f94a-4c11-8d4b-84e90200373c" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
 shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)";depin="depinst" ;} ;fi
+###init-c
+###deps-o
+$depin insert-package 
+###deps-c
+###code-o
+
 case $arg in
 
   help)
@@ -29,8 +33,8 @@ allfix makes it so that all command do not run until __"
     ;;
 esac
 
-
-###ed-o
+###code-c
+###exit-o
 unset arg
-###ed-c
-###bash-lib-c
+###exit-c
+###bash-lib-c 
