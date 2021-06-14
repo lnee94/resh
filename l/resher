@@ -59,6 +59,7 @@ help="echo \"a bash repo manager
     resher -f /path/to/file foobar args
     resher -h OR resher --help shows this
     \""
+    
 fa=()
 
 flags=("-h" "--help" "-e" "-E" "-f=*" "--install-resher" "*" )
