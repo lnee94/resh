@@ -8,8 +8,7 @@ if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
 depin="resher"
 if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)";depin="depinst" ;} ;fi
 ###init-c
-###deps-o
-$depin insert-package 
+###deps-o 
 ###deps-c
 ###code-o
 
