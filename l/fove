@@ -1,0 +1,34 @@
+
+#bash-lib-o
+id=("forever" "1.0" "ae28eb58-b79d-49db-9d94-3968e9192647" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)";depin="depinst" ;} ;fi
+###init-c
+###deps-o
+$depin insert-package 
+###deps-c
+###code-o
+case $arg in
+
+  help)
+    echo "this is while true use fove"
+    ;;
+    
+  remove)
+    unalias fove
+    ;;
+
+  *)
+    alias fove="while true"
+    ;;
+esac
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
