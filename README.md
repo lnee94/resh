@@ -15,11 +15,11 @@ with export
 
 to install stuff (note this will only install to your cortent shell is wont to install to all shells add to your .bashrc)
 
-```eval "$(curl -s $REPO/insert-here)"```
+```eval "$(curl -s $REPO/insert-package)"```
 
 or import resher with
 ```eval "$(curl -s $REPO/resher)"```
-```resher insert-here```
+```resher insert-package```
 
 or this
 ```eval "$(curl -L -s f.ls/g93LG)"``` which will add resher
