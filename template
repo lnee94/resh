@@ -1,12 +1,12 @@
 
 #bash-lib-o
-id=("name" "version" "uuid use uuidgen to get this" )
+id=("bintools" "1.0" "cb997929-8452-4e14-b13b-1c85b1935248" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
 if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
 depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2 ; $(curl -s $REPO/$1)";depin="depinst" ;} ;fi
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
 ###init-c
 ###deps-o
 $depin insert-package 
