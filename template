@@ -6,7 +6,7 @@ defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 shopt -s expand_aliases
 if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
 depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
 ###init-c
 ###deps-o
 $depin insert-package 
