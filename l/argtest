@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("argtest" "1.0.1" "6675247b-2646-43b0-bf0d-5cbe7864d503" )
+id=("argtest" "1.0.2" "6675247b-2646-43b0-bf0d-5cbe7864d503" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -23,7 +23,7 @@ case $arg in
 
   *)
     argtest(){
-    data=${1:-$(</dev/stdin)};
+    data="$(</dev/stdin)";
     echo "$data"
     echo $@
     }
