@@ -1,6 +1,6 @@
 
 #bash-lib-o
-id=("comfix" "2.0" "01e13ab1-f94a-4c11-8d4b-84e90200373c" )
+id=("comfix" "2.1" "01e13ab1-f94a-4c11-8d4b-84e90200373c" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -21,14 +21,18 @@ allfix makes it so that all command do not run until __"
     ;;
     
   remove)
-    unalias +-
+    unalias +- 2>&1 /dev/null
+    unalias __ 2>&1 /dev/null
     ;;
   allfix)
   alias \+\-=": <<__('"
   ;;
-
+  oldfix)
+  alias \+\-=': <<__'
+  ;;
+  alias +-="if false ;then" ;alias __="fi"
   *)
-    alias \+\-=': <<__'
+    
     ;;
 esac
 
