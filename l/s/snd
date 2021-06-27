@@ -1,0 +1,61 @@
+#!/bin/bash
+eval "$(curl -s https://raw.githubusercontent.com/lnee94/resh/main/l/resher)"
+resher sptx ,bintools,comfix
++-
+store files in the pid system
+use -s to send
+-r to receve
+
+
+
+__
+
+case $1 in
+
+  -s)
+
+
+
+file="$2"
+filedata="$(readb ""$file"")"
+segment_size=4000
+filebinsize=$(wc -c<"$file")
+filehexsize=`printf "$filedata" |wc -c `
+segments=$((($filehexsize/$segment_size)+0$([ $filehexsize%$segment_size != 0 ] && echo 1)))
+
+code="$RANDOM"
+
+
+i=1
+out=""
+until [ $i = $(($segments+1)) ] 
+do
+
+out="$out
+bash -c \": psfile$code|: $i:|: "`printf "$filedata" |sptx -c $i $segment_size`" |:|sleep 99999d \" &"
+
+i=$(($i+1)) ;done
+
+echo $code
+
+echo -n "$out" | bash 
+    ;;
+    -r)
+
+code=$2
+
+size=`ps -e -f | grep [p]sfile$code | wc -l`
+
+i=1
+out=
+until [ $i = $(($size+1)) ]
+do
+
+out="$out"`ps -e -f | grep [p]sfile$code |grep :\ $i: | awk -F\| '{print $3}' | awk -F: '{print $2}' | tr -d '\n' | tr -d ' '  `
+
+
+i=$(($i+1)) ;done
+
+xxd -r -p <<<"$out" > $code
+;;
+esac
