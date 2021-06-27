@@ -3,7 +3,7 @@ resher sptx ,bintools,comfix
 
 
 
-file="$2"
+file="$arg"
 filedata="$(readb ""$file"")"
 segment_size=4000
 filebinsize=$(wc -c<"$file")
