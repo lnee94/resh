@@ -1,0 +1,40 @@
+#bash-lib-o
+id=("argtest" "1.0" "6675247b-2646-43b0-bf0d-5cbe7864d503" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o 
+###deps-c
+###code-o
+
+case $arg in
+
+  help)
+    echo "you pipe stuff in this and it will print it and the args"
+    ;;
+    
+  remove)
+    unset argtest
+    ;;
+  pipe)
+    argtest(){
+    cat
+    }
+    
+    ;;
+  *)
+    argtest(){
+    echo $@
+    }
+    ;;
+esac
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
