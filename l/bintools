@@ -1,5 +1,5 @@
 arg= ; #bash-lib-o
-id=("bintools" "1.0.2" "cb997929-8452-4e14-b13b-1c85b1935248" )
+id=("bintools" "1.1" "cb997929-8452-4e14-b13b-1c85b1935248" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -29,7 +29,7 @@ writeb hex file"
 
   *)
     readb () {
-    hexdump -v -e '/1 "%02X "' $1|sed -e 's/ //g'
+    hexdump -v -e '/1 "%02X "' "$1" |sed -e 's/ //g'
     }
     writeb () {
     xxd -r -p <<< $1 > $2
