@@ -1,0 +1,47 @@
+
+#bash-lib-o
+id=("sptx" "1.0" "def58de4-1492-4368-b7a2-218bc5717a50" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+###deps-c
+###code-o
+case $arg in
+
+  help)
+    echo "use this split text you pipe a string in to it.
+usage:
+sptx bite-to-start-at chunk-size
+sptx -c chunk-to-start-at chunk-size"
+    ;;
+    
+  remove)
+    unset sptx
+    ;;
+
+  *)
+    sptx(){
+    data="$(</dev/stdin)";
+    case $1 in
+    -c)
+    
+    echo -n "$data" | tail -c $(($(echo -n "$data"|wc -c)-(($2-1)*$3))) | head -c $3
+    
+    ;;
+    *)
+    echo -n "$data" | tail -c $(($(echo -n "$data"|wc -c)-($1-1))) | head -c $2
+    ;;
+    esac
+    }
+    ;;
+esac
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
