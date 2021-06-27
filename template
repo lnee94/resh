@@ -1,6 +1,6 @@
 
 #bash-lib-o
-id=("bintools" "1.0" "cb997929-8452-4e14-b13b-1c85b1935248" )
+id=("name" "version" "uuid use uuidgen to get this" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
