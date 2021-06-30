@@ -1,4 +1,4 @@
-arg= ; #bash-lib-o
+#bash-lib-o
 id=("bintools" "1.1" "cb997929-8452-4e14-b13b-1c85b1935248" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
