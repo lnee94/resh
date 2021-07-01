@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("resher" "2.0.3" "02f31abd-29ab-447f-873a-c04d7963874e" )
+id=("resher" "2.1" "02f31abd-29ab-447f-873a-c04d7963874e" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
