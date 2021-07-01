@@ -1,6 +1,6 @@
 
 #bash-lib-o
-id=("sptx" "1.0" "def58de4-1492-4368-b7a2-218bc5717a50" )
+id=("sptx" "1.1" "def58de4-1492-4368-b7a2-218bc5717a50" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -26,7 +26,7 @@ sptx -c chunk-to-start-at chunk-size"
 
   *)
     sptx(){
-    data="$(</dev/stdin)";
+    if [ -p /dev/stdin ]; then data="$(</dev/stdin)"; fi
     case $1 in
     -c)
     
