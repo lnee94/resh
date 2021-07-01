@@ -69,7 +69,7 @@ fa=()
 
 flags=("-h" "--help" "-e" "-E" "-f=*" "--install-resher" "*" )
 flagdo=("echo \"\$help\" " "echo \"\$help\" " "dashe" "getfile=echo\ ; usefile=echo" " filee" "fa+=(resher) ;  reshinstall" "fa+=(\$in)" )
-
+eval "$HOOK"
 
 ###arghand
 flagcount=${#flags[@]}
