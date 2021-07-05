@@ -1,0 +1,2 @@
+resher(){ eval "arg=$2;$(curl -s $REPO/$1)"
+}
