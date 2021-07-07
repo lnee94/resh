@@ -1,0 +1,14 @@
+
+dir="wintempder"
+
+drive="$(blkid | grep TYPE\=\"ntfs\" | grep PARTLABEL\=\"Basic\ data\ partition\" | awk -F: '{print $1}')"
+mounted="$(findmnt $drive | tail -n 1 | awk '{print $1}')"
+if [ "x$mounted" = "x" ]
+then
+mkdir "/tmp/$dir"
+sudo mount "$drive" "/tmp/$dir" 
+mounted="/tmp/$dir" 
+fi
+cd "$mounted"
+cd "Windows/System32/config/"
+sudo chntpw -i SAM
