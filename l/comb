@@ -1,0 +1,53 @@
+
+#bash-lib-o
+id=("comb" "1.0" "d4c11cac-ae93-42ff-b066-7bb051a2a940" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+###deps-c
+###code-o
+
+
+case $arg in
+
+  help)
+    echo "insert text"
+    ;;
+    
+  remove)
+    unset intx
+    unset comb
+    ;;
+
+  *)
+    intx(){
+pipe="$3"
+echo -n `head -c $1 <<<"$pipe"`"$2"`tail -c $((($(wc -c <<<"$pipe"))-($1+($(wc -c <<<"$2")-1)))) <<<"$pipe"`
+}
+
+comb(){
+
+in=`if [ -p /dev/stdin ]; then echo "$(</dev/stdin)"; fi`
+
+echo "$(head -n $1 <<<"$in")""
+$(for i in `eval echo {1..$(wc -l <<<"$3")}`
+do
+intx $2 `head -n $i <<<"$3" | tail -n 1` `head -n $(($i+$1)) <<<"$in" | tail -n 1`
+echo
+done)
+"`tail -n $(($(wc -l <<<"$in")-($1+$(wc -l <<<"$3")))) <<<"$in"`
+}
+    ;;
+esac
+
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
