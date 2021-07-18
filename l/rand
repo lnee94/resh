@@ -1,0 +1,38 @@
+
+#bash-lib-o
+id=("rand" "1.0" "131fe969-b7b5-43d1-b419-4336cd8b545e" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o 
+###deps-c
+###code-o
+
+
+case $arg in
+
+  help)
+    echo "prints a random number form $1 to $2"
+    ;;
+    
+  remove)
+    unset rand
+    ;;
+
+  *)
+    rand(){
+echo $(((0x$(head -c $(wc -c <<<"$2" ) <<<"$(head -c $(wc -c <<<"$2" ) /dev/urandom | hexdump -v -e '/1 "%02X "' |sed -e 's/ //g')")  ) % $2 + $1))
+}
+    ;;
+esac
+
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
