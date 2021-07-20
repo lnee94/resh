@@ -1,0 +1,39 @@
+
+#bash-lib-o
+id=("githubls" "1.0" "a2911ee1-8b2e-476b-90f8-cec539aebee6" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+$depin insert-package 
+###deps-c
+###code-o
+
+case $arg in
+
+  help)
+    echo "lists items in a github repo"
+    ;;
+    
+  remove)
+    unset githubls
+    ;;
+
+  *)
+    githubls(){
+    
+    curl -s "$1" | tr '<' '\n' | grep "a class=\"js-navigation-open Link--primary" | sed ':a;N;$!ba;s/title="/\ntitle="/g' | grep 'title="' | awk -F\" '{print $2}' 
+    
+    }
+    ;;
+esac
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c
