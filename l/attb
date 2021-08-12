@@ -1,0 +1,31 @@
+#bash-lib-o
+id=("attb" "1.0" "688c8296-8f42-4142-9ea1-9d4c96cdd468" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+###deps-c
+###code-o
+case $arg in
+
+  help)
+    echo "adds text to the back of each peac of text"
+    ;;
+    
+  remove)
+    unset attb
+    ;;
+
+  *)
+    attb(){ cat | sed ":a;N;\$!ba;s/\n/\n$1/g" | sed ":a;N;\$!ba;s/$1\n//g" | grep "$1" ;}
+    ;;
+esac
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
