@@ -1,0 +1,37 @@
+#bash-lib-o
+id=("addlineend" "1.0" "8c2a4187-4470-46d4-ae3c-5d89a8aa3a6b" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+###deps-c
+###code-o
+
+case $arg in
+
+  help)
+    echo "adds a line endding to text pipe in"
+    ;;
+    
+  remove)
+    unset addlineend
+    ;;
+
+  *)
+   addlineend() {
+#adds a new line to a pipe
+if [ -p /dev/stdin ]; then echo "
+$(</dev/stdin)"; fi
+}
+    ;;
+esac
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 

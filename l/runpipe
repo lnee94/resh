@@ -1,0 +1,35 @@
+#bash-lib-o
+id=("runpip" "1.0" "c8bebf5c-2813-409a-a8db-0d778d300d67" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+
+###deps-c
+###code-o
+case $arg in
+
+  help)
+    echo "runs code pipe into it with runpipe"
+    ;;
+    
+  remove)
+    unset runpipe
+    ;;
+
+  *)
+    runpipe(){
+if [ -p /dev/stdin ]; then eval "$(</dev/stdin)"; fi
+}
+    ;;
+esac
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
