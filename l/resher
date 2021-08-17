@@ -114,10 +114,10 @@ i=$(($i+1)) ;done
 
 
 
-unalias dashe
-unalias filee
-unalias reshinstall
-unset oneuue
+unalias dashe >/dev/null
+unalias filee >/dev/null
+unalias reshinstall >/dev/null
+unset oneuue >/dev/null
 }
 ;;
 esac
