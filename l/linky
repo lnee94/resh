@@ -13,6 +13,17 @@ $depin oneuse
 $depin addlineend 
 ###deps-c
 ###code-o
+case $arg in
+
+  help)
+    echo "make execacutable"
+    ;;
+    
+  remove)
+    unset linky
+    ;;
+
+  *)
 linky(){
 
 shopt -s expand_aliases
@@ -109,3 +120,5 @@ $glx "$argin" | modavar | getlinks "$argin" | sort -u
 unset arg
 ###exit-c
 ###bash-lib-c 
+;;
+esac
