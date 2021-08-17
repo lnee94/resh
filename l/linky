@@ -1,0 +1,111 @@
+#bash-lib-o
+id=("linky" "1.0" "daf0b0fc-3e86-475c-874d-17aac657dc1d" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+$depin arghand
+$depin oneuse
+$depin addlineend 
+###deps-c
+###code-o
+linky(){
+
+shopt -s expand_aliases
+portocall=""
+if [ "x$portocall" = "x" ]
+then
+portocall="http|https|ftp|git"
+fi
+if [ "x$portocall" = "x" ]
+then
+tld=".com|.ru|.org|.net|.ir|.in|.uk|.au|.ua|.de|.io|.ly|.be|.ls|.biz"
+fi
+headlink(){
+#gets just the domain
+grep <<<"$1" -Eo "($portocall)://[a-z0-9:@.-]*($tld)"
+}
+
+alias curl='curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/90.0.2"'
+
+
+
+
+
+
+oneuse helpmsg "echo \"linky the swisarmy knife of geting links
+usage: linky [OPTION]... URL
+
+  -L fallos redirects
+  --href handles partial links in hrefs 
+\" ; exit"
+
+alias argggg='sed "s/\\\//g"'
+
+#sets defallts
+ptxt=1
+href=0
+gtx="curl -s"
+reptnum=1
+comdll=cat
+endco=cat
+
+
+#the part where args are handle
+flags=(  "-S" "-L" "-h" "--help" "--href" "*" )
+flagdo=( 'comdll="$comdll"\|argggg ' "gtx=\"\$gtx -L\"" "helpmsg" "helpmsg" "href=1"  "argin=\$in")
+arghand
+
+
+
+#entra setup
+
+alias modavar="$comdll" # add modafication var that adds stuff
+glx="$gtx"" $hlx"
+
+
+
+getlinks() {
+PIPE="$(if [ -p /dev/stdin ]; then echo "$(</dev/stdin)"; fi)"
+#prepair the input links
+hesed="$(headlink "$1" | sed 's/\//\\\//g')"
+ti1="$(sed <<<$1 's/\//\\\//g')"
+
+
+if [ $ptxt = 1 ]
+then
+
+#finds pain text links
+echo "$PIPE"  | grep -Eo "($portocall)://[a-z0-9:@.-]*($tld)/(:|)[a-zA-Z0-9./?=_:%&-]*" 
+fi
+
+#handles href
+
+if [ $href = 1 ]
+then
+
+pop="$(echo "$PIPE" | grep -Eo "href=\"[a-zA-Z0-9./?=_:%&-]*\"" | awk -F\" '{print $2}' | addlineend | sed ':a;N;$!ba;s/\n\//\n#/g' | sed "s/#/$hesed\//g" )"
+grep <<<"$pop" -Eo "($portocall)://[a-z0-9:@.-]*($tld)(:|)[a-zA-Z0-9./?=_:%&-]*"
+
+grep <<<"$pop" -Ev "($portocall)://[a-z0-9:@.-]*($tld)(:|)[a-zA-Z0-9./?=_:%&-]*" | sed ':a;N;$!ba;s/\n/\n#/g' |sed "s/#/$ti1/g" 
+fi
+
+}
+
+
+
+
+#for when people don't wont to run this many times
+$glx "$argin" | modavar | getlinks "$argin" | sort -u 
+
+
+}
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
