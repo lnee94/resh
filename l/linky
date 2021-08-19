@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("linky" "1.0" "daf0b0fc-3e86-475c-874d-17aac657dc1d" )
+id=("linky" "1.5" "daf0b0fc-3e86-475c-874d-17aac657dc1d" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -62,7 +62,7 @@ ptxt=1
 href=0
 gtx="curl -s"
 reptnum=1
-comdll=cat
+comdll="cat"
 endco=cat
 
 
