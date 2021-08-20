@@ -53,7 +53,7 @@ usage: linky [OPTION]... URL
 
   -L fallos redirects
   --href handles partial links in hrefs 
-\" ; exit"
+\" ; return"
 
 alias argggg='sed "s/\\\//g"'
 
