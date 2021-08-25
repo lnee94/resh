@@ -1,3 +1,9 @@
+woring i sometimes ship stuff that IS REALY BORKEN so download the libs when they work and put then in your scripts
+
+note my code that is under 300 lines of code not commits and templats are licened under the apache 2.0 licenes https://apache.org/licenses/LICENSE-2.0
+over that is the gpl3
+or if someone posted there own they may licenes there own code how ever they wont
+
 ![com2](https://user-images.githubusercontent.com/73306958/121432176-5244c900-c948-11eb-8a38-b6ace842cf30.png)
 
 ![q](https://user-images.githubusercontent.com/73306958/121403883-6200e500-c929-11eb-83ed-38fdbda19b69.png)
