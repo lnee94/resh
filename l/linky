@@ -1,5 +1,5 @@
-#bash-lib-o
-id=("linky" "2.1" "daf0b0fc-3e86-475c-874d-17aac657dc1d" )
+arg="" ; #bash-lib-o
+id=("linky" "2.0" "daf0b0fc-3e86-475c-874d-17aac657dc1d" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -56,6 +56,7 @@ usage: linky [OPTION]... URL
 \" ; exit"
 
 alias argggg='sed "s/\\\//g"'
+alias arhhh='sed "s/u002F/\//g"'
 
 #sets defallts
 ptxt=1
@@ -67,8 +68,8 @@ endco=cat
 
 
 #the part where args are handle
-flags=(  "-S" "-L" "-h" "--help" "--href" "*" )
-flagdo=( 'comdll="$comdll"\|argggg ' "gtx=\"\$gtx -L\"" "helpmsg" "helpmsg" "href=1"  "argin=\$in")
+flags=(  "-u" "-S" "-L" "-h" "--help" "--href" "*" )
+flagdo=( 'comdll="$comdll"\|arhhh' 'comdll="$comdll"\|argggg ' "gtx=\"\$gtx -L\"" "helpmsg" "helpmsg" "href=1"  "argin=\$in")
 arghand
 
 
@@ -91,7 +92,7 @@ if [ $ptxt = 1 ]
 then
 
 #finds pain text links
-echo "$PIPE"  | grep -Eo "($portocall)://[a-z0-9:@.-]*($tld)/(:|)[a-zA-Z0-9./?=_:%&-]*" 
+echo "$PIPE"  | grep -Eo "($portocall)://[a-z0-9:@.-]*($tld)/(:|)[a-zA-Z0-9./?=_:%&-+]*" 
 fi
 
 #handles href
@@ -99,15 +100,15 @@ fi
 if [ $href = 1 ]
 then
 
-pop="$(echo "$PIPE" | grep -Eo "href=\"[a-zA-Z0-9./?=_:%&-]*\"" | awk -F\" '{print $2}' | addlineend | sed ':a;N;$!ba;s/\n\//\n#/g' | sed "s/#/$hesed\//g" )"
-grep <<<"$pop" -Eo "($portocall)://[a-z0-9:@.-]*($tld)(:|)[a-zA-Z0-9./?=_:%&-]*"
+pop="$(echo "$PIPE" | grep -Eo "href=\"[a-zA-Z0-9./?=_:%&-+]*\"" | awk -F\" '{print $2}' | addlineend | sed ':a;N;$!ba;s/\n\//\n#/g' | sed "s/#/$hesed\//g" )"
+grep <<<"$pop" -Eo "($portocall)://[a-z0-9:@.-]*($tld)(:|)[a-zA-Z0-9./?=_:%&-+]*"
 
-grep <<<"$pop" -Ev "($portocall)://[a-z0-9:@.-]*($tld)(:|)[a-zA-Z0-9./?=_:%&-]*" | sed ':a;N;$!ba;s/\n/\n#/g' |sed "s/#/$ti1/g" 
+grep <<<"$pop" -Ev "($portocall)://[a-z0-9:@.-]*($tld)(:|)[a-zA-Z0-9./?=_:%&-+]*" | sed ':a;N;$!ba;s/\n/\n#/g' |sed "s/#/$ti1/g" 
 fi
 
 }
 
-
+ 
 
 
 #for when people don't wont to run this many times
