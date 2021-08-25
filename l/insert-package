@@ -1,1 +1,1 @@
-echo "you've stumble acoss a example package which is the defalt"
+echo "you've stumble acoss a example package which is the defalt ${id[@]} " >/dev/stderr
