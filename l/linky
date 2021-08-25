@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("linky" "2.0" "daf0b0fc-3e86-475c-874d-17aac657dc1d" )
+id=("linky" "2.1" "daf0b0fc-3e86-475c-874d-17aac657dc1d" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -25,21 +25,7 @@ case $arg in
 
   *)
 linky(){
-#bash-lib-o
-id=("linky" "1.5" "daf0b0fc-3e86-475c-874d-17aac657dc1d" )
-defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
-###init-o
-shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
-depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
-###init-c
-###deps-o
-$depin arghand
-$depin oneuse
-$depin addlineend 
-###deps-c
-###code-o
+resher arghand ,oneuse ,addlineend 
 shopt -s expand_aliases
 portocall=""
 if [ "x$portocall" = "x" ]
