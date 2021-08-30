@@ -41,7 +41,7 @@ headlink(){
 grep <<<"$1" -Eo "($portocall)://[a-z0-9:@.-]*($tld)"
 }
 
-alias curl='curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/90.0.2"'
+#alias curl='curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/90.0.2"'
 
 
 
@@ -75,7 +75,7 @@ arghand
 
 
 #entra setup
-
+eval "$HOOK"
 alias modavar="$comdll" # add modafication var that adds stuff
 glx="$gtx"" $hlx"
 
