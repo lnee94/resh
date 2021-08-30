@@ -1,4 +1,4 @@
-arg="" ; #bash-lib-o
+#bash-lib-o
 id=("linky" "2.555" "daf0b0fc-3e86-475c-874d-17aac657dc1d" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
