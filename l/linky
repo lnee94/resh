@@ -78,7 +78,7 @@ arghand
 eval "$HOOK"
 alias modavar="$comdll" # add modafication var that adds stuff
 glx="$gtx"" $hlx"
-
+eval "$HOOK"
 
 
 getlinks() {
