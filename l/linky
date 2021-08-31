@@ -110,7 +110,7 @@ fi
 
  
 
-eval "$HOOK"
+shopt -s expand_aliases
 #for when people don't wont to run this many times
 $glx "$argin" | modavar | getlinks "$argin" | sort -u 
 
