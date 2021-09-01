@@ -76,7 +76,7 @@ arghand
 
 #entra setup
 eval "$HOOK"
-alias modavar="$comdll" # add modafication var that adds stuff
+eval "modavar(){ "$comdll" ; }" # add modafication var that adds stuff
 glx="$gtx"" $hlx"
 eval "$HOOK"
 
@@ -110,7 +110,7 @@ fi
 
  
 
-shopt -s expand_aliases
+
 #for when people don't wont to run this many times
 $glx "$argin" | modavar | getlinks "$argin" | sort -u 
 
