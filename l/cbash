@@ -8,7 +8,6 @@ depin="resher"
 if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)" ;};depin="depinst" ;fi
 ###init-c
 ###deps-o
-$depin insert-package 
 ###deps-c
 ###code-o
 
