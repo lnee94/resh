@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("attb" "1.0" "688c8296-8f42-4142-9ea1-9d4c96cdd468" )
+id=("attb" "1.5" "688c8296-8f42-4142-9ea1-9d4c96cdd468" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -21,7 +21,7 @@ case $arg in
     ;;
 
   *)
-    attb(){ cat | sed ":a;N;\$!ba;s/\n/\n$1/g" | sed ":a;N;\$!ba;s/$1\n//g" | grep "$1" ;}
+    attb(){ cat | sed "s/.*/$1+&/g";}
     ;;
 esac
 ###code-c
