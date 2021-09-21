@@ -1,0 +1,37 @@
+
+#bash-lib-o
+id=("reline" "1.0" "2da2072e-14ce-46f6-be33-bfd5d331f6dc" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+$depin insert-package 
+###deps-c
+###code-o
+
+
+case $arg in
+
+  help)
+    echo "removes lines with out text"
+    ;;
+    
+  remove)
+    unalias reline
+    ;;
+
+  *)
+    alias reline="sed -e '/^$/d'"
+    ;;
+esac
+
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
