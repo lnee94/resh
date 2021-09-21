@@ -1,0 +1,43 @@
+
+#bash-lib-o
+id=("lofile" "1.0" "1f17b6ae-74bb-4c3c-b173-f63d738de1b6" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+$depin insert-package 
+###deps-c
+###code-o
+
+case $arg in
+
+  help)
+    echo "lofile examplefiletobemountedtoaloopdevice
+lofile -d examplefiletobeunmountedaloopdevice"
+    ;;
+    
+  remove)
+    unset lofile
+    ;;
+
+  *)
+    lofile(){
+if [ "$1" = "-d" ]
+then
+sudo losetup -d "$(losetup | awk "{print \$1,\$6}" | grep "$(readlink -f "$2")" | awk "{print \$1}")"
+else
+sudo losetup "/dev/loop$(($(losetup | awk '{print $1}' | grep "loop" | grep -Eo "[0-9]*" | sort -n | tail -1)+2))" "$1"
+fi
+}
+    ;;
+esac
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
