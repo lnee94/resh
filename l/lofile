@@ -30,6 +30,7 @@ if [ "$1" = "-d" ]
 then
 sudo losetup -d "$(losetup | awk "{print \$1,\$6}" | grep "$(readlink -f "$2")" | awk "{print \$1}")"
 else
+echo "/dev/loop$(($(losetup | awk '{print $1}' | grep "loop" | grep -Eo "[0-9]*" | sort -n | tail -1)+2))"
 sudo losetup "/dev/loop$(($(losetup | awk '{print $1}' | grep "loop" | grep -Eo "[0-9]*" | sort -n | tail -1)+2))" "$1"
 fi
 }
