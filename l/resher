@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("resher" "2.2" "02f31abd-29ab-447f-873a-c04d7963874e" )
+id=("resher" "2.25" "02f31abd-29ab-447f-873a-c04d7963874e" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -67,9 +67,10 @@ help="a bash repo manager
 fa=()
 
 
-flags=("-h" "--help" "-e" "-E" "-f=*" "--install-resher" "*" )
-flagdo=("echo \"\$help\" " "echo \"\$help\" " "dashe" "getfile=echo\ ; usefile=echo" " filee" "fa+=(resher) ;  reshinstall" "fa+=(\$in)" )
+flags=("-h" "--help" "-e" "-E" "-f=*" "--install-resher"  )
+flagdo=("echo \"\$help\" " "echo \"\$help\" " "dashe" "getfile=echo\ ; usefile=echo" " filee" "fa+=(resher) ;  reshinstall"  )
 eval "$HOOK"
+flags+=("*") ; flagdo+=("fa+=(\$in)")
 
 ###arghand
 flagcount=${#flags[@]}
