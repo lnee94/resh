@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("resher" "2.27" "02f31abd-29ab-447f-873a-c04d7963874e" )
+id=("resher" "2.3" "02f31abd-29ab-447f-873a-c04d7963874e" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -72,7 +72,7 @@ fa=()
 
 flags=("-h" "--help" "-e" "-E" "-f=*" "--install-resher"  )
 flagdo=("echo \"\$help\" " "echo \"\$help\" " "dashe" "getfile=echo\ ; usefile=echo" " filee" "fa+=(resher) ;  reshinstall"  )
-eval "id=("resher" "2.27" "02f31abd-29ab-447f-873a-c04d7963874e" "1" ) ; $HOOK"
+eval "id=("fba5f8d4-35df-4db9-9bbb-b4743eb0c95d" ) ; $HOOK"
 flags+=("*") ; flagdo+=("fa+=(\$in)")
 
 ###arghand
@@ -106,7 +106,7 @@ il=$(($il + 1 )) ;done
 
 # echo ${fa[*]} 
 
-eval "id=("resher" "2.27" "02f31abd-29ab-447f-873a-c04d7963874e" "2" ) ; $HOOK"
+eval "id=("d7c29ac8-dff5-4dc6-b01d-88d77b74c599" ) ; $HOOK"
 i=1
 until [ "$(echo "${fa[*]}" | awk -F, "{print \$$i}")" = "" ] 
 do
