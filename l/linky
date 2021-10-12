@@ -1,6 +1,6 @@
 
 #bash-lib-o
-id=("linky" "3" "daf0b0fc-3e86-475c-874d-17aac657dc1d" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+id=("linky" "3.01" "daf0b0fc-3e86-475c-874d-17aac657dc1d" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -15,7 +15,13 @@ if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(cur
 case $arg in
 
   help)
-    echo "make execacutable"
+    echo "linky the swisarmy knife of geting links
+usage: linky [OPTION]... URL
+
+  -L fallos redirects
+  --href handles partial links in hrefs 
+  -S deletes backslashes
+  -u converts unicode"
     ;;
     
   remove)
