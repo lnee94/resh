@@ -1,6 +1,6 @@
 
 #bash-lib-o
-id=("name" "2.0" "7eeff3c7-ed15-413c-a239-734905d75188" )
+id=("mx" "2.0" "7eeff3c7-ed15-413c-a239-734905d75188" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
