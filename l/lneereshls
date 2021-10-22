@@ -1,0 +1,38 @@
+#bash-lib-o
+id=("lneereshls" "1.0" "d4c8beb5-1d88-4b82-991f-3adc7bde412e" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+
+###deps-c
+###code-o
+
+case $arg in
+
+  help)
+    echo "lists items in a github repo"
+    ;;
+    
+  remove)
+    unset lneereshls
+    ;;
+
+  *)
+    lneereshls(){
+    
+    curl -s "https://github.com/lnee94/resh/tree/main/l" | tr '<' '\n' | grep "a class=\"js-navigation-open Link--primary" | sed ':a;N;$!ba;s/title="/\ntitle="/g' | grep 'title="' | awk -F\" '{print $2}' 
+    
+    }
+    ;;
+esac
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c
