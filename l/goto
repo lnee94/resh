@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("goto" "2.0" "a23ba3ca-c7cf-4603-9b80-d3f270775651" )
+id=("goto" "2.1" "a23ba3ca-c7cf-4603-9b80-d3f270775651" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -12,17 +12,7 @@ if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $R
 ###deps-c
 ###code-o
 
-case $- in
-    *i*) ;;
-      *) return;;
-esac
 
-
-###options-o 
-#
-#help
-#remove
-###option-c
 case $arg in
 
   help)
