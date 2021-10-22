@@ -30,7 +30,7 @@ or import resher with
 or this
 ```eval "$(curl -L -s f.ls/g93LG)"``` which will add resher
 or this 
-```eval "$(curl -L -s https://raw.githubusercontent.com/lnee94/resh/main/resher)"``` faster but biger
+```eval "$(curl -L -s https://raw.githubusercontent.com/lnee94/resh/main/setup-repo)"``` faster but biger
 
 you download the text and add that to your shell script
 
