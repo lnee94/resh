@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("goto" "2.1" "a23ba3ca-c7cf-4603-9b80-d3f270775651" )
+id=("goto" "2.2" "a23ba3ca-c7cf-4603-9b80-d3f270775651" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 shopt -s expand_aliases
@@ -25,7 +25,7 @@ case $arg in
 
   *)
     goto() {
-    eval "$(cat $0 | tail -n $(( $(cat $0 | wc -l) - $1 )) )"
+    eval "$(cat $0 | tail -n $(( $(cat $0 | wc -l) - $(($1 - 1)) )) )"
     }
     ;;
 esac
