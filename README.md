@@ -2,7 +2,7 @@ woring i sometimes ship stuff that IS REALY BORKEN so download the libs when the
 
 note my code that is under 300 lines of code not commits and templats are licened under the apache 2.0 licenes https://apache.org/licenses/LICENSE-2.0 or lgpl https://www.gnu.org/licenses/lgpl-3.0.en.html
 over that is the gpl3 https://www.gnu.org/licenses/gpl-3.0.en.html   
-or if someone posted there own they may licenes there own code how ever they wont
+or if someone posted there own code they may licenes there own code how ever they want
 
 ![com2](https://user-images.githubusercontent.com/73306958/121432176-5244c900-c948-11eb-8a38-b6ace842cf30.png)
 
