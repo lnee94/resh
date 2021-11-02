@@ -15,7 +15,7 @@ if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(cur
 case $arg in
 
   help)
-    echo "lists items in a github repo"
+    echo "lists items in lnee's resh repo"
     ;;
     
   remove)
