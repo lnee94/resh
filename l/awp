@@ -1,0 +1,43 @@
+#bash-lib-o
+id=("awp" "1.0" "f804bd4b-2f5f-4736-9b2e-1ca9d839d254" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+###init-c
+###deps-o
+###deps-c
+###code-o
+case $arg in
+
+  help)
+    echo "awk print but quicker to type"
+    ;;
+    
+  remove)
+    unset awp
+    ;;
+
+  *)
+    awp(){ 
+if [ "x$2" = "x" ]
+then 
+echo "$(if [ -p /dev/stdin ] ;then echo "$(</dev/stdin)"; fi )"   | awk "{print \$$1}"
+else 
+echo "$(if [ -p /dev/stdin ]; then echo "$(</dev/stdin)"; fi )" | awk "-F$2" "{print \$$1}"
+fi
+}
+    ;;
+esac
+
+
+
+
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
