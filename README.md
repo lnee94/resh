@@ -35,7 +35,8 @@ or this
 you download the text and add that to your shell script
 
 HOW TO MAKE PACKAGE
-there is a template file fallow the insrtions in there a fork of package must have a differint uuid
+there is a template file fallow the insrtions in there. 
+A fork of package must have a differint uuid.
 
 links
 http://bitly.ws/e6FS
