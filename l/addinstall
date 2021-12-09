@@ -1,0 +1,41 @@
+#bash-lib-o
+id=("addinstall" "1.0" "eae76282-5543-4ec2-84a9-0dd603ed72fa" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)" ;};depin="depinst" ;fi
+eae7628255434ec284a90dd603ed72fa="$arg"
+###init-c
+###deps-o
+$depin runpipe
+$depin libhook
+###deps-c
+###code-o
+arg="$eae7628255434ec284a90dd603ed72fa"
+case $arg in
+
+  help)
+    echo "add the install option to resher"
+    ;;
+    
+  remove)
+  
+   eval "$( tr <<<"$(eval echo {0..${#HOOK[@]}})" ' ' '\n' | awk '{print "echo -n \""$1" \" ; grep -c <<<\"${HOOK["$1"]}\""" 6bf8c174-d98e-42a1-bd07-14248d8154ad" }' | runpipe | grep " 1\$"  | awk '{print "unset HOOK["$1"]"}' )"
+    ;;
+
+  *)
+ if [ "$(tr <<<"$(eval echo {0..${#HOOK[@]}})" ' ' '\n' | awk '{print "echo -n \""$1" \" ; grep -c <<<\"${HOOK["$1"]}\""" 6bf8c174-d98e-42a1-bd07-14248d8154ad" }' | runpipe | grep " 1\$"  )x" = "x" ]
+ then
+ 
+  HOOK+=( 'if [ "fba5f8d4-35df-4db9-9bbb-b4743eb0c95d" = "$hookid" ] ; then flags+=("-i" "--install") ; flagdo+=("usefile=echo ; endfile=\>\> ; endto=\$HOME/.resher " "usefile=echo ; endfile=\>\> ; endto=\$HOME/.resher ") ; help="$help""resher -i or --install installs a package to the system
+" ;  fi #6bf8c174-d98e-42a1-bd07-14248d8154ad ')
+fi
+    ;;
+esac
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
