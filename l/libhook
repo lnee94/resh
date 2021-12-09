@@ -1,0 +1,33 @@
+#bash-lib-o
+id=("libhook" "1.0" "ce7008d8-c808-4118-8311-aa1eb5253c31" )
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
+depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)" ;};depin="depinst" ;fi
+###init-c
+###deps-o
+###deps-c
+###code-o
+case $arg in
+
+  help)
+    echo "this is a hook manager
+usage:
+HOOK[\$((\${#HOOK[@]}+0))]=\"if [ \"\$hookid\" = \"a-radum-uuid\" ] ; then your great mod ; fi\" "
+    ;;
+    
+  remove)
+    unset HOOK
+    ;;
+
+  *)
+    HOOK='for e7cc6b041c284e1a8e35ae6d007ef6b5 in $(eval echo {1..${#HOOK[@]}});do eval "${HOOK[$e7cc6b041c284e1a8e35ae6d007ef6b5]}" ;done'
+    ;;
+esac
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
