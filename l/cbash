@@ -52,6 +52,7 @@ send a pull request"
     unalias l
     unalias b
     unalias x
+    unalias E
     
     unset LS
     unset V
@@ -89,6 +90,7 @@ send a pull request"
     alias l=ls\ -1
     alias b=hexdump
     alias x=xxd
+    alias E=eval
     #comen vars
     V=( "/dev/null" "/tmp/" )
     #comen link shortenrs
