@@ -1,15 +1,17 @@
 #bash-lib-o
-id=("attb" "1.7" "688c8296-8f42-4142-9ea1-9d4c96cdd468" )
+id=("attb" "3.7" "688c8296-8f42-4142-9ea1-9d4c96cdd468" "https://raw.githubusercontent.com/lnee94/resh/main/l/attb" )
+deps=("insert-package")
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
+eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
 shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
-depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
+eval "$(echo ${deps[@]} | tr \  \\n | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") # ;$(set|grep "^deps=" ) "
 ###init-c
-###deps-o
-###deps-c
 ###code-o
+
 case $arg in
 
   help)
@@ -24,8 +26,9 @@ case $arg in
     attb(){ cat | sed "s/.*/$1&$2/g";}
     ;;
 esac
+
 ###code-c
 ###exit-o
 unset arg
 ###exit-c
-###bash-lib-c 
+###bash-lib-c  
