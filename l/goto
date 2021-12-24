@@ -1,17 +1,16 @@
 #bash-lib-o
-id=("goto" "2.25" "a23ba3ca-c7cf-4603-9b80-d3f270775651" )
+id=("goto" "3.25" "a23ba3ca-c7cf-4603-9b80-d3f270775651" "https://raw.githubusercontent.com/lnee94/resh/main/l/goto" )
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
+eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
 shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
-depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)" ;};depin="depinst" ;fi
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
+eval "$(echo ${deps[@]} | tr \  \\n | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") # ;$(set|grep "^deps=" ) "
 ###init-c
-###deps-o
-
-###deps-c
 ###code-o
-
 
 case $arg in
 
@@ -30,8 +29,9 @@ case $arg in
     ;;
 esac
 
+
 ###code-c
 ###exit-o
 unset arg
 ###exit-c
-###bash-lib-c 
+###bash-lib-c  
