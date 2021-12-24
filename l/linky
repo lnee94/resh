@@ -1,14 +1,15 @@
 #bash-lib-o
-id=("linky" "3.1" "daf0b0fc-3e86-475c-874d-17aac657dc1d" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+id=("linky" "3.1" "daf0b0fc-3e86-475c-874d-17aac657dc1d" "https://raw.githubusercontent.com/lnee94/resh/main/l/linky" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+deps=("insert-package")
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
+eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
 shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
-depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
+eval "$(echo ${deps[@]} | tr \  \\n | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") # ;$(set|grep "^deps=" ) "
 ###init-c
-###deps-o
-###deps-c
 ###code-o
 
 case $arg in
@@ -156,8 +157,9 @@ $glx "$argin" | modavar | getlinks "$argin" | sort -u
   ;;
   esac
 
+
 ###code-c
 ###exit-o
 unset arg
 ###exit-c
-###bash-lib-
+###bash-lib-c  
