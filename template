@@ -1,17 +1,17 @@
 #bash-lib-o
-id=("name" "version" "uuid use uuidgen to get this" )
+id=("name" "version" "uuid use uuidgen to get this" "source url aka where to find the package" )
+RESHPACKAGES+=("${id[@]}")
+deps=("insert-package")
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
+eval "$HOOK"
 shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
-depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
+eval "$(echo ${deps[@]} | tr \  \\n | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") # ;$(set|grep "^deps=" ) "
 ###init-c
-###deps-o
-$depin insert-package 
-###deps-c
 ###code-o
-
 
 #put your code here and use the arg varible for arguemts
 
@@ -20,4 +20,4 @@ $depin insert-package
 ###exit-o
 unset arg
 ###exit-c
-###bash-lib-c 
+###bash-lib-c  
