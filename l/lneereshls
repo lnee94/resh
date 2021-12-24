@@ -1,16 +1,17 @@
 #bash-lib-o
-id=("lneereshls" "1.0" "d4c8beb5-1d88-4b82-991f-3adc7bde412e" )
+id=("lneereshls" "1.0" "d4c8beb5-1d88-4b82-991f-3adc7bde412e" "https://raw.githubusercontent.com/lnee94/resh/main/l/lneereshls" )
+deps=("insert-package")
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
+eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
 shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
-depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
+eval "$(echo ${deps[@]} | tr \  \\n | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") # ;$(set|grep "^deps=" ) "
 ###init-c
-###deps-o
-
-###deps-c
 ###code-o
+
 
 case $arg in
 
@@ -35,4 +36,4 @@ esac
 ###exit-o
 unset arg
 ###exit-c
-###bash-lib-c
+###bash-lib-c  
