@@ -1,10 +1,9 @@
 #bash-lib-o
 id=("name" "version" "uuid use uuidgen to get this" "source url aka where to find the package" )
-RESHPACKAGES+=("${id[@]}")
 deps=("insert-package")
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
-eval "$HOOK"
+eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
 shopt -s expand_aliases
 if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
 if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
