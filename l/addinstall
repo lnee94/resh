@@ -1,19 +1,16 @@
 #bash-lib-o
-id=("addinstall" "1.0" "eae76282-5543-4ec2-84a9-0dd603ed72fa" )
+id=("addinstall" "3.0" "eae76282-5543-4ec2-84a9-0dd603ed72fa" "https://raw.githubusercontent.com/lnee94/resh/main/l/addinstall" )
+deps=("runpipe" "libhook")
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
+eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
 shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
-depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "$2""$(curl -s $REPO/$1)" ;};depin="depinst" ;fi
-eae7628255434ec284a90dd603ed72fa="$arg"
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
+eval "$(echo ${deps[@]} | tr \  \\n | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") # ;$(set|grep "^deps=" ) "
 ###init-c
-###deps-o
-$depin runpipe
-$depin libhook
-###deps-c
 ###code-o
-arg="$eae7628255434ec284a90dd603ed72fa"
 case $arg in
 
   help)
@@ -38,4 +35,4 @@ esac
 ###exit-o
 unset arg
 ###exit-c
-###bash-lib-c 
+###bash-lib-c  
