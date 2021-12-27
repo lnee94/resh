@@ -1,14 +1,15 @@
 #bash-lib-o
-id=("sptx" "1.1" "def58de4-1492-4368-b7a2-218bc5717a50" )
+id=("sptx" "3.1" "def58de4-1492-4368-b7a2-218bc5717a50" "https://raw.githubusercontent.com/lnee94/resh/main/l/sptx" )
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
+eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
 shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi
-depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ;fi
+if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
+eval "$(echo ${deps[@]} | tr \  \\n | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") # ;$(set|grep "^deps=" ) "
 ###init-c
-###deps-o
-###deps-c
 ###code-o
 case $arg in
 
@@ -43,4 +44,4 @@ esac
 ###exit-o
 unset arg
 ###exit-c
-###bash-lib-c 
+###bash-lib-c
