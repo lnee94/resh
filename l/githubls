@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("githubls" "1.0" "a2911ee1-8b2e-476b-90f8-cec539aebee6" "https://raw.githubusercontent.com/lnee94/resh/main/l/githubls" )
+id=("githubls" "3.0" "a2911ee1-8b2e-476b-90f8-cec539aebee6" "https://raw.githubusercontent.com/lnee94/resh/main/l/githubls" )
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
