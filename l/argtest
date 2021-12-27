@@ -1,7 +1,7 @@
 #bash-lib-o
 id=("argtest" "3.2" "6675247b-2646-43b0-bf0d-5cbe7864d503" "https://raw.githubusercontent.com/lnee94/resh/main/l/argtest" )
 RESHPACKAGES+=("${id[@]}")
-deps=("insert-package")
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 eval "$HOOK"
