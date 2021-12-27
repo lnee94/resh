@@ -1,6 +1,6 @@
 #bash-lib-o
-id=("oneuse" "2.0" "7d49314a-96ee-4cae-a82d-ec45b8787893" "https://raw.githubusercontent.com/lnee94/resh/main/l/oneuse" )
-deps=("insert-package")
+id=("oneuse" "3.0" "7d49314a-96ee-4cae-a82d-ec45b8787893" "https://raw.githubusercontent.com/lnee94/resh/main/l/oneuse" )
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
