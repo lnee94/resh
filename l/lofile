@@ -1,6 +1,6 @@
 #bash-lib-o
-id=("lofile" "1.4" "1f17b6ae-74bb-4c3c-b173-f63d738de1b6" "https://raw.githubusercontent.com/lnee94/resh/main/l/lofile" )
-deps=("insert-package")
+id=("lofile" "3.4" "1f17b6ae-74bb-4c3c-b173-f63d738de1b6" "https://raw.githubusercontent.com/lnee94/resh/main/l/lofile" )
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
