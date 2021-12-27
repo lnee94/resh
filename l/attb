@@ -1,6 +1,6 @@
 #bash-lib-o
 id=("attb" "3.7" "688c8296-8f42-4142-9ea1-9d4c96cdd468" "https://raw.githubusercontent.com/lnee94/resh/main/l/attb" )
-deps=("insert-package")
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
