@@ -1,6 +1,6 @@
 #bash-lib-o
 id=("libhook" "3.0" "ce7008d8-c808-4118-8311-aa1eb5253c31" "https://raw.githubusercontent.com/lnee94/resh/main/l/libhook" )
-deps=("insert-package")
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
