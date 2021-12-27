@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("comb" "1.0" "d4c11cac-ae93-42ff-b066-7bb051a2a940" "https://raw.githubusercontent.com/lnee94/resh/main/l/comb" )
+id=("comb" "3.0" "d4c11cac-ae93-42ff-b066-7bb051a2a940" "https://raw.githubusercontent.com/lnee94/resh/main/l/comb" )
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
