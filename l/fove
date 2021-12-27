@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("fove" "1.0.1" "ae28eb58-b79d-49db-9d94-3968e9192647" "https://raw.githubusercontent.com/lnee94/resh/main/l/fove" )
+id=("fove" "3.1" "ae28eb58-b79d-49db-9d94-3968e9192647" "https://raw.githubusercontent.com/lnee94/resh/main/l/fove" )
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
