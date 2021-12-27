@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("comfix" "2.2.1" "01e13ab1-f94a-4c11-8d4b-84e90200373c" "https://raw.githubusercontent.com/lnee94/resh/main/l/comfix" )
+id=("comfix" "3.1" "01e13ab1-f94a-4c11-8d4b-84e90200373c" "https://raw.githubusercontent.com/lnee94/resh/main/l/comfix" )
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
