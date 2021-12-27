@@ -1,6 +1,6 @@
 #bash-lib-o
 id=("awp" "3.0" "f804bd4b-2f5f-4736-9b2e-1ca9d839d254" "https://raw.githubusercontent.com/lnee94/resh/main/l" )
-deps=("insert-package")
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
