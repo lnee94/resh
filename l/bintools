@@ -1,6 +1,6 @@
 #bash-lib-o
 id=("bintools" "3.2" "cb997929-8452-4e14-b13b-1c85b1935248" "https://raw.githubusercontent.com/lnee94/resh/main/l/bintools" )
-deps=("insert-package")
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
