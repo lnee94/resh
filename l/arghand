@@ -1,7 +1,7 @@
 #bash-lib-o
 id=("arghand" "3.0" "e12c7dc7-0392-4efb-99a2-95cdfe586ffa" "https://raw.githubusercontent.com/lnee94/resh/main/l/arghand" )
 RESHPACKAGES+=("${id[@]}")
-deps=("insert-package")
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 eval "$HOOK"
