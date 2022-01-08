@@ -1,6 +1,6 @@
 #bash-lib-o
-id=("linky" "3.2" "daf0b0fc-3e86-475c-874d-17aac657dc1d" "https://raw.githubusercontent.com/lnee94/resh/main/l/linky" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-deps=()
+id=("linky" "3.25" "daf0b0fc-3e86-475c-874d-17aac657dc1d" "https://raw.githubusercontent.com/lnee94/resh/main/l/linky" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+deps=("reline" "addlineend" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
@@ -139,18 +139,14 @@ il=$(($il + 1 )) ;done
 eval "modavar(){ "$comdll" ; }" # add modafication var that adds stuff
 glx="$gtx"" $hlx"
 
-addlineend() {
-#adds a new line to a pipe
-if [ -p /dev/stdin ]; then echo "
-$(</dev/stdin)"; fi
-}
+
 
 
 
 $glx "$argin" 1> /dev/null ; if [ $? != 0 ] ; then echo "erorr coude not find $argin" >/dev/stderr ; return ; exit ; fi
 
 #for when people don't wont to run this many times
-$glx "$argin" | modavar | getlinks "$argin" | sort -u 
+$glx "$argin" | modavar | getlinks "$argin" | sort -u | reline
 
 }
 
