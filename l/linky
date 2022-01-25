@@ -1,14 +1,14 @@
 #bash-lib-o
-id=("linky" "3.25" "daf0b0fc-3e86-475c-874d-17aac657dc1d" "https://raw.githubusercontent.com/lnee94/resh/main/l/linky" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+id=("linky" "3.25" "daf0b0fc-3e86-475c-874d-17aac657dc1d" "https://raw.githubusercontent.com/lnee94/resh/main/l/linky" "4" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 deps=("reline" "addlineend" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
-eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
+eval "$HOOK";RESHPACKAGES+=("$(set|grep ^id=);$(set|grep ^arg=)")
 shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
-eval "$(echo ${deps[@]} | tr \  \\n | awk "{print \"$depin \"\$1}" )
-$(set|grep "^id=");$(set|grep "^arg=") # ;$(set|grep "^deps=" ) "
+if [ "x$REPO" = "x" ];then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ];then depinst(){ [ "$#" = "0" ] ||eval "arg=$2;""$(curl -s $REPO/$1)";};depin="depinst";fi
+eval "$(echo ${deps[@]}|tr \  \\n |sed -e '/^$/d' | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") #;$(set|grep "^deps=" ) "
 ###init-c
 ###code-o
 
@@ -158,4 +158,4 @@ $glx "$argin" | modavar | getlinks "$argin" | sort -u | reline
 ###exit-o
 unset arg
 ###exit-c
-###bash-lib-c  
+###bash-lib-c

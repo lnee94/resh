@@ -1,14 +1,14 @@
 #bash-lib-o
-id=("resher" "2.31" "02f31abd-29ab-447f-873a-c04d7963874e" "https://raw.githubusercontent.com/lnee94/resh/main/l/resher" )
+id=("resher" "2.31" "02f31abd-29ab-447f-873a-c04d7963874e" "https://raw.githubusercontent.com/lnee94/resh/main/l/resher" "4" )
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
-eval "$HOOK" ;RESHPACKAGES+=("${id[@]}")
+eval "$HOOK";RESHPACKAGES+=("$(set|grep ^id=);$(set|grep ^arg=)")
 shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
-eval "$(echo ${deps[@]} | tr \  \\n | awk "{print \"$depin \"\$1}" )
-$(set|grep "^id=");$(set|grep "^arg=") # ;$(set|grep "^deps=" ) "
+if [ "x$REPO" = "x" ];then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ];then depinst(){ [ "$#" = "0" ] ||eval "arg=$2;""$(curl -s $REPO/$1)";};depin="depinst";fi
+eval "$(echo ${deps[@]}|tr \  \\n |sed -e '/^$/d' | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") #;$(set|grep "^deps=" ) "
 ###init-c
 ###code-o
 case $arg in
@@ -39,7 +39,7 @@ alias $1=\"\" "
     
     }
 
- 
+
 
 
 oneuue dashe "usefile=echo"
@@ -109,7 +109,7 @@ il=$(($il + 1 )) ;done
 
 eval "hookid=("d7c29ac8-dff5-4dc6-b01d-88d77b74c599" ) ; $HOOK"
 i=1
-until [ "$(echo "${fa[*]}" | awk -F, "{print \$$i}")" = "" ] 
+until [ "$(echo "${fa[@]}" | awk -F, "{print \$$i}")" = "" ] 
 do
 arg1="$(echo "${fa[*]}" | awk -F, "{print \$$i}" | awk '{print $1}')"
 arg2="$(echo "${fa[*]}" | awk -F, "{print \$$i}" | awk '{print $2}')"
@@ -119,10 +119,11 @@ i=$(($i+1)) ;done
 
 
 
-unalias dashe 2>/dev/null
-unalias filee 2>/dev/null
-unalias reshinstall 2>/dev/null
-unset oneuue 2>/dev/null
+
+unalias dashe 
+unalias filee 
+unalias reshinstall 
+unset oneuue 
 }
 ;;
 esac

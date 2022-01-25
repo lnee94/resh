@@ -1,15 +1,15 @@
 #bash-lib-o
-id=("argtest" "3.2" "6675247b-2646-43b0-bf0d-5cbe7864d503" "https://raw.githubusercontent.com/lnee94/resh/main/l/argtest" )
+id=("argtest" "3.2" "6675247b-2646-43b0-bf0d-5cbe7864d503" "https://raw.githubusercontent.com/lnee94/resh/main/l/argtest" "4" )
 RESHPACKAGES+=("${id[@]}")
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
-eval "$HOOK"
+eval "$HOOK";RESHPACKAGES+=("$(set|grep ^id=);$(set|grep ^arg=)")
 shopt -s expand_aliases
-if [ "x$REPO" = "x" ] ;then REPO=$defaltrepo ;fi;depin="resher"
-if [ "$(type -t resher)" != "function" ] ;then depinst(){ eval "arg=$2 ; ""$(curl -s $REPO/$1)" ;} ;depin="depinst" ; echo defla;fi
-eval "$(echo ${deps[@]} | tr \  \\n | awk "{print \"$depin \"\$1}" )
-$(set|grep "^id=");$(set|grep "^arg=") # ;$(set|grep "^deps=" ) "
+if [ "x$REPO" = "x" ];then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ];then depinst(){ [ "$#" = "0" ] ||eval "arg=$2;""$(curl -s $REPO/$1)";};depin="depinst";fi
+eval "$(echo ${deps[@]}|tr \  \\n |sed -e '/^$/d' | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") #;$(set|grep "^deps=" ) "
 ###init-c
 ###code-o
 
@@ -35,4 +35,4 @@ esac
 ###exit-o
 unset arg
 ###exit-c
-###bash-lib-c  
+###bash-lib-c
