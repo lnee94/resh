@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("libhook" "3.0" "ce7008d8-c808-4118-8311-aa1eb5253c31" "https://raw.githubusercontent.com/lnee94/resh/main/l/libhook" "4" )
+id=("libhook" "3.1" "ce7008d8-c808-4118-8311-aa1eb5253c31" "https://raw.githubusercontent.com/lnee94/resh/main/l/libhook" "4" )
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
@@ -25,7 +25,8 @@ HOOK[\$((\${#HOOK[@]}+0))]=\"if [ \"\$hookid\" = \"a-radum-uuid\" ] ; then your 
     ;;
 
   *)
-    HOOK=('for e7cc6b041c284e1a8e35ae6d007ef6b5 in $(eval echo {1..${#HOOK[@]}});do eval "${HOOK[$e7cc6b041c284e1a8e35ae6d007ef6b5]}" ;done')
+
+    HOOK+=( [0]='for e7cc6b041c284e1a8e35ae6d007ef6b5 in $(eval echo {1..${#HOOK[@]}});do eval "${HOOK[$e7cc6b041c284e1a8e35ae6d007ef6b5]}" ;done')
     ;;
 esac
 
