@@ -120,10 +120,7 @@ i=$(($i+1)) ;done
 
 
 
-unalias dashe 
-unalias filee 
-unalias reshinstall 
-unset oneuue 
+
 }
 ;;
 esac
