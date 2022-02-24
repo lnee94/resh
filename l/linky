@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("linky" "3.25" "daf0b0fc-3e86-475c-874d-17aac657dc1d" "https://raw.githubusercontent.com/lnee94/resh/main/l/linky" "4" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+id=("linky" "3.26" "daf0b0fc-3e86-475c-874d-17aac657dc1d" "https://raw.githubusercontent.com/lnee94/resh/main/l/linky" "4" ) # reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 deps=("reline" "addlineend" )
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
@@ -45,7 +45,7 @@ if [ $ptxt = 1 ]
 then
 
 #finds pain text links
-echo "$PIPE"  | grep -Eo "($portocall)://[a-z0-9:@.-]*($tld)/(:|)[a-zA-Z0-9./?=_:%&+-]*" 
+echo "$PIPE"  | grep -Eo "($portocall)://[a-z0-9:@.-]*($tld)/(:|)[a-zA-Z0-9./?=_:%&+,-]*" 
 fi
 
 #handles href
@@ -53,10 +53,10 @@ fi
 if [ $href = 1 ]
 then
  
-pop="$(echo "$PIPE" | grep -Eo "href=\"[a-zA-Z0-9./?=_:%&+-]*\"" | awk -F\" '{print $2}' | addlineend | sed ':a;N;$!ba;s/\n\//\n#/g' | sed "s/#/$hesed\//g" )"
-grep <<<"$pop" -Eo "($portocall)://[a-z0-9:@.-]*($tld)(:|)[a-zA-Z0-9./?=_:%&+-]*"
+pop="$(echo "$PIPE" | grep -Eo "href=\"[a-zA-Z0-9./?=_:%&+,-]*\"" | awk -F\" '{print $2}' | addlineend | sed ':a;N;$!ba;s/\n\//\n#/g' | sed "s/#/$hesed\//g" )"
+grep <<<"$pop" -Eo "($portocall)://[a-z0-9:@.-]*($tld)(:|)[a-zA-Z0-9./?=_:%&+,-]*"
 
-grep <<<"$pop" -Ev "($portocall)://[a-z0-9:@.-]*($tld)(:|)[a-zA-Z0-9./?=_:%&+-]*" | sed ':a;N;$!ba;s/\n/\n#/g' |sed "s/#/$ti1/g" 
+grep <<<"$pop" -Ev "($portocall)://[a-z0-9:@.-]*($tld)(:|)[a-zA-Z0-9./?=_:%&+,-]*" | sed ':a;N;$!ba;s/\n/\n#/g' |sed "s/#/$ti1/g" 
 fi
 }
 headlink(){
