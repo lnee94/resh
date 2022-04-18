@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("bintools" "3.2" "cb997929-8452-4e14-b13b-1c85b1935248" "https://raw.githubusercontent.com/lnee94/resh/main/l/bintools" "4" )
+id=("bintools" "3.5" "cb997929-8452-4e14-b13b-1c85b1935248" "https://raw.githubusercontent.com/lnee94/resh/main/l/bintools" "4" )
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
@@ -26,11 +26,19 @@ writeb hex file"
   remove)
     unset readb
     unset writeb
+    unset writep
+    unset readp
     ;;
 
   *)
+    readp () {
+    hexdump -v -e '/1 "%02X "' |sed -e 's/ //g'
+    }
     readb () {
     hexdump -v -e '/1 "%02X "' "$1" |sed -e 's/ //g'
+    }
+    writep () {
+    xxd -r -p
     }
     writeb () {
     xxd -r -p <<< $1 > $2
