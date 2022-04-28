@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("resher" "2.31" "02f31abd-29ab-447f-873a-c04d7963874e" "https://raw.githubusercontent.com/lnee94/resh/main/l/resher" "4" )
+id=("resher" "3.35" "02f31abd-29ab-447f-873a-c04d7963874e" "https://raw.githubusercontent.com/lnee94/resh/main/l/resher" "4" )
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
@@ -112,7 +112,7 @@ i=1
 until [ "$(echo "${fa[@]}" | awk -F, "{print \$$i}")" = "" ] 
 do
 arg1="$(echo "${fa[*]}" | awk -F, "{print \$$i}" | awk '{print $1}')"
-arg2="$(echo "${fa[*]}" | awk -F, "{print \$$i}" | awk '{print $2}')"
+arg2="$(echo "${fa[*]}" | awk -F, "{print \$$i}" | awk '{$1=""; print $0}')"
 eval '$usefile "arg=\"$arg2\" ; ""$($getfile  $REPO/$arg1)" '"$endfile""$endto"
 
 i=$(($i+1)) ;done
