@@ -112,7 +112,7 @@ i=1
 until [ "$(echo "${fa[@]}" | awk -F, "{print \$$i}")" = "" ] 
 do
 arg1="$(echo "${fa[*]}" | awk -F, "{print \$$i}" | awk '{print $1}')"
-arg2="$(echo "${fa[*]}" | awk -F, "{print \$$i}" | awk '{$1=""; print $0}')"
+arg2="$(echo "${fa[*]}" | awk -F, "{print \$$i}" | awk '{$1=""; print $0}' |awk '{$1=$1; print $0}')"
 eval '$usefile "arg=\"$arg2\" ; ""$($getfile  $REPO/$arg1)" '"$endfile""$endto"
 
 i=$(($i+1)) ;done
