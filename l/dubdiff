@@ -1,0 +1,44 @@
+#bash-lib-o
+id=("dubdiff" "1.0" "cff01e09-0c2d-4b94-8e70-a8f51ae8ee7f" "https://raw.githubusercontent.com/lnee94/resh/main/l/dubdiff" )
+deps=()
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+eval "$HOOK";RESHPACKAGES+=("$(set|grep ^id=);$(set|grep ^arg=)")
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ];then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ];then depinst(){ [ "$#" = "0" ] ||eval "arg=$2;""$(curl -s $REPO/$1)";};depin="depinst";fi
+eval "$(echo ${deps[@]}|tr \  \\n |sed -e '/^$/d' | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") #;$(set|grep "^deps=" ) "
+###init-c
+###code-o
+
+
+
+case $arg in
+
+  help)
+    echo "runs the two args given and diffs them"
+    ;;
+    
+  remove)
+    unset dubdiff
+    ;;
+
+  *)
+    dubdiff(){
+    arg1="$(mktemp)"
+    arg2="$(mktemp)"
+    eval "$1" > "$arg1"
+    eval "$2" > "$arg2"
+    diff "$arg1" "$arg2"
+    rm "$arg1" "$arg2"
+    }
+    ;;
+esac
+
+
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c  
