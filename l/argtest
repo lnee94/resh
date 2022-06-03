@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("argtest" "3.2" "6675247b-2646-43b0-bf0d-5cbe7864d503" "https://raw.githubusercontent.com/lnee94/resh/main/l/argtest" "4" )
+id=("argtest" "3.3" "6675247b-2646-43b0-bf0d-5cbe7864d503" "https://raw.githubusercontent.com/lnee94/resh/main/l/argtest" "4" )
 RESHPACKAGES+=("${id[@]}")
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
@@ -26,7 +26,7 @@ case $arg in
   *)
     argtest(){
     if [ -p /dev/stdin ]; then echo "$(</dev/stdin)"; fi
-    echo $0 $@
+    echo $# $0 $@
     }
     ;;
 esac
