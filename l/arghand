@@ -1,5 +1,5 @@
 #bash-lib-o
-id=("arghand" "3.0" "e12c7dc7-0392-4efb-99a2-95cdfe586ffa" "https://raw.githubusercontent.com/lnee94/resh/main/l/arghand" "4" )
+id=("arghand" "3.1" "e12c7dc7-0392-4efb-99a2-95cdfe586ffa" "https://raw.githubusercontent.com/lnee94/resh/main/l/arghand" "4" )
 RESHPACKAGES+=("${id[@]}")
 deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
@@ -32,7 +32,7 @@ while [ $il != $(($# +1 )) ]
 do
 i=0
 argnum=$il
-out="case \$$argnum in"
+out="case \${$argnum} in"
 
 while [ $i != $flagcount  ]
 do
