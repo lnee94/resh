@@ -1,0 +1,40 @@
+#bash-lib-o
+id=("pause" "1.0" "1f22a729-9bb2-4451-a5a4-6b5d4d7a2246" "https://raw.githubusercontent.com/lnee94/resh/main/l/pause" )
+deps=("")
+defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
+###init-o
+eval "$HOOK";RESHPACKAGES+=("$(set|grep ^id=);$(set|grep ^arg=)")
+shopt -s expand_aliases
+if [ "x$REPO" = "x" ];then REPO=$defaltrepo ;fi;depin="resher"
+if [ "$(type -t resher)" != "function" ];then depinst(){ [ "$#" = "0" ] ||eval "arg=$2;""$(curl -s $REPO/$1)";};depin="depinst";fi
+eval "$(echo ${deps[@]}|tr \  \\n |sed -e '/^$/d' | awk "{print \"$depin \"\$1}" )
+$(set|grep "^id=");$(set|grep "^arg=") #;$(set|grep "^deps=" ) "
+###init-c
+###code-o
+case $arg in
+
+  help)
+    echo "use the pause to add breaks in code
+use resume to well resume"
+    ;;
+    
+  remove)
+    unset pause
+    unset resume
+    ;;
+
+  *)
+    pause(){
+    bash -c "while true ; do : ;done ;: ':$$:pause:$0:' " 
+
+    }
+    resume(){
+    kill "$(ps -ef | grep -E "':[0-9]*:pause:[a-zA-Z0-9/'\".-]*:'" | awk  '{print $2}')"
+    }
+    ;;
+esac
+###code-c
+###exit-o
+unset arg
+###exit-c
+###bash-lib-c 
