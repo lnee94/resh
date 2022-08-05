@@ -15,7 +15,7 @@ case $arg in
 
   help)
     echo "use the pause to add breaks in code
-use resume to well resume"
+use resume to resume "
     ;;
     
   remove)
@@ -29,7 +29,7 @@ use resume to well resume"
 
     }
     resume(){
-    kill "$(ps -ef | grep -E "':[0-9]*:pause:[a-zA-Z0-9/'\".-]*:'" | awk  '{print $2}')"
+    kill "$(ps -ef | grep -E "':[0-9]*:pause:[a-zA-Z0-9/'\".-]*:'" | awk  '{print $2}' | grep "$1")"
     }
     ;;
 esac
