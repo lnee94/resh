@@ -4,5 +4,5 @@ eval "arg= ; $(curl -s https://raw.githubusercontent.com/lnee94/resh/main/l/link
 pwd="$PWD"
 cd "$(mktemp -d)"
 wget "$(linky https://github.com/rustdesk/rustdesk/releases --href | grep -E "rustdesk-[0-9.]*.deb$" | tail -1)"
-sudo apt install ./*
+sudo apt install -y ./*
 cd "$pwd"
