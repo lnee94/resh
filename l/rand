@@ -1,6 +1,6 @@
 #bash-lib-o
 id=("rand" "1.0" "131fe969-b7b5-43d1-b419-4336cd8b545e" "https://raw.githubusercontent.com/lnee94/resh/main/l/rand" "4" )
-deps=("insert-package")
+deps=()
 defaltrepo="https://raw.githubusercontent.com/lnee94/resh/main/l"
 ###init-o
 eval "$HOOK";RESHPACKAGES+=("$(set|grep ^id=);$(set|grep ^arg=)")
