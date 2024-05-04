@@ -1,0 +1,8 @@
+#!/bin/bash
+#bs
+cd Uploads
+curl -o melonds https://raw.githubusercontent.com/lnee94/test/main/melonDS
+sudo apt update
+sudo apt install libqt5widgets5 libqt5multimedia5 libenet7 libslirp0 libarchive13
+chmod +x melonds
+./melonds
