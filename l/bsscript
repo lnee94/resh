@@ -3,10 +3,14 @@
 cd Uploads
 curl -o melonds https://raw.githubusercontent.com/lnee94/test/main/melonDS
 sudo apt update -y
-sudo apt install libqt5widgets5 libqt5multimedia5 libenet7 libslirp0 libarchive13 -y
+sudo apt install libqt5widgets5 libqt5multimedia5 libenet7 libslirp0 libarchive13 awesome lxtask pcmanfm wget nano -y
 [ -f "melonDS.ini" ] || curl -o melonDS.ini https://raw.githubusercontent.com/lnee94/test/main/com
 mkdir -p /home/kasm-user/.config/melonDS/
 mv melonDS.ini /home/kasm-user/.config/melonDS/
 sudo mv melonds /usr/bin/
 sudo chmod +x /usr/bin/melonds
-
+wget https://raw.githubusercontent.com/lnee94/test/main/mellon.desktop
+sudo mv mellon.desktop /usr/share/applications/
+wget https://raw.githubusercontent.com/lnee94/test/main/melonicon.png
+sudo mv melonicon.png /
+sudo apt remove openbox
