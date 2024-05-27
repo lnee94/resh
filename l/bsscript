@@ -13,4 +13,4 @@ wget https://raw.githubusercontent.com/lnee94/test/main/mellon.desktop
 sudo mv mellon.desktop /usr/share/applications/
 wget https://raw.githubusercontent.com/lnee94/test/main/melonicon.png
 sudo mv melonicon.png /
-sudo apt remove openbox
+sudo apt remove openbox -y
