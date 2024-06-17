@@ -15,6 +15,4 @@ sudo mv mellon.desktop /usr/share/applications/
 wget https://raw.githubusercontent.com/lnee94/test/main/melonicon.png
 sudo mv melonicon.png /
 sudo apt remove openbox -y
-echo "#\!/bin/bash
-
-/usr/bin/awesome > /dev/null 2>&1" > /defaults/startwm.sh
+echo "IyEvYmluL2Jhc2gKCi91c3IvYmluL2F3ZXNvbWUgPiAvZGV2L251bGwgMj4mMQo=" | base64 -d | sudo tee /defaults/startwm.sh
