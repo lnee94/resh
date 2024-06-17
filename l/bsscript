@@ -17,4 +17,4 @@ sudo mv melonicon.png /
 sudo apt remove openbox -y
 echo "#\!/bin/bash
 
-/usr/bin/awesome > /dev/null 2>&1" > /home/kasm-user/.vnc/xstartup
+/usr/bin/awesome > /dev/null 2>&1" > /defaults/startwm.sh
